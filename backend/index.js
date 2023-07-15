@@ -5,6 +5,8 @@ dotenv.config();
 const PORT=process.env.PORT
 const app = express();
 
+app.use(express.json);
+
 mongoose.connect(process.env.MONGO_URL,{useNewUrlParser:true,useUnifiedTopology:true,})
 .then(()=>console.log("database connected successfully"))
 .catch(err=>console.log(err))
