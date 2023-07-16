@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 const PORT = process.env.PORT || 8000;
 
 const pinRoutes = require('./routes/pins');
+const userRoutes = require('./routes/users');
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ mongoose.connect(process.env.MONGO_URL,{useNewUrlParser:true,useUnifiedTopology:
 .catch(err=>console.log(err))
 
 app.use('/api/pins',pinRoutes)
+app.use('/api/users',userRoutes)
 
 app.listen(PORT, ()=>{
   console.log(`Server connected successfully on ${PORT}`);
