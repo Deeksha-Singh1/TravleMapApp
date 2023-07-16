@@ -1,2 +1,2 @@
 const router = require('express').Router();
-const User = require('../modules/User');
+const User = require('../models/User');
